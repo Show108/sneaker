@@ -1,0 +1,155 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="e-commerce_desktop.css">
+    <link href="https://fonts.googleapis.com/css?family=Kumbh Sans" rel="stylesheet">
+    <script src="e-commerce_destop.js"></script>
+    <title>E-COMMERCE</title>
+</head>
+<body onload="mainSlide(1)">
+        <div class="nav-container">
+            <div class="navbar">
+                <img src="/ecommerce-product-page-main/images/icon-menu.svg" alt="" onclick="menu()" class="menu" >
+                <img src="./ecommerce-product-page-main/images/logo.svg" alt="logo" class="logo">
+                <nav>
+                    <ul class="navigation">
+                        <li><img src="/ecommerce-product-page-main/images/icon-close.svg" class="remove" onclick="remove()" alt=""></li>
+                        <li ><a href="#">Collections</a></li>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="navitems">
+                    <div class="cart">
+                        <img src="./ecommerce-product-page-main/images/icon-cart.svg" alt="icon" class="icon-cart" onclick="openCard()">
+                        <p class="colour-dot">1</p>
+                    </div>
+                    <img src="./ecommerce-product-page-main/images/image-avatar.png" alt="avatar" class="avatar">
+            
+                </div>
+            </div>
+        <div class="col">
+            <div class="productcol">
+                <div class="slideshow-container">
+                    <div class="image">
+                        <img src="/ecommerce-product-page-main/images/image-product-1.jpg" id="product-img" alt="" onclick="openModal();currentSlide(1)">
+                    </div>
+                    <div class="image">
+                        <img src="/ecommerce-product-page-main/images/image-product-2.jpg" id="product-img" alt="" onclick="openModal();currentSlide(2)">
+                    </div>
+                    <div class="image">
+                        <img src="/ecommerce-product-page-main/images/image-product-3.jpg" id="product-img" alt="" onclick="openModal();currentSlide(3)">
+                    </div>
+                    <div class="image">
+                        <img src="/ecommerce-product-page-main/images/image-product-4.jpg" id="product-img" alt="" onclick="openModal();currentSlide(4)">
+                    </div>
+            
+                </div>
+            
+                <a class="prevbutton" onclick="addSlides(-1)">
+                    <img src="/ecommerce-product-page-main/images/icon-previous.svg" alt="">
+                </a>
+                <a class="nextbutton" onclick="addSlides(1)">
+                    <img src="/ecommerce-product-page-main/images/icon-next.svg" alt="">
+                </a>
+            
+                <span class="smallproduct" style="margin-left: 0px;display:flex;">
+                    <div onclick="mainSlide(1)" class="dot">
+                        <img src="/ecommerce-product-page-main/images/image-product-1-thumbnail.jpg" class="thumbnail" alt="">
+                    </div>
+                    <div onclick="mainSlide(2)" class="dot">
+                        <img src="/ecommerce-product-page-main/images/image-product-2-thumbnail.jpg" class="thumbnail" alt="">
+                    </div>
+                    <div onclick="mainSlide(3)" class="dot">
+                        <img src="/ecommerce-product-page-main/images/image-product-3-thumbnail.jpg" class="thumbnail" alt="">
+                    </div>
+                    <div onclick="mainSlide(4)" class="dot">
+                        <img src="/ecommerce-product-page-main/images/image-product-4-thumbnail.jpg" class="thumbnail" alt="">
+                    </div>
+                </span>
+            </div>
+                <div class="description">
+                    <h2 class="first-title">Sneaker Company</h2>
+                    <h1 class="second-title">Fall Limited Edition <br> Sneakers</h1>
+                    <p class="text">These low-profile sneakers are your perfect casual wear  <br> companion. Featuring a 
+                        durable rubber outer sole, they’ll <br> withstand everything the weather can offer.
+                    </p>
+                    <p class="fig1">$125.00</p>
+                    <h3 class="fig2"><span>50%</span></h3>
+                    <p class="fig3"><strike>$250.00</strike></p>
+                    <div class="wrapper">
+                        <span onclick="minus()"><img src="/ecommerce-product-page-main/images/icon-minus.svg" alt="" class="minus"></span>
+                        <span class="counter">0</span>
+                        <span class="plus" onclick="add()"><img src="/ecommerce-product-page-main/images/icon-plus.svg" alt=""></span>
+                    </div>
+                    <button type="button" onclick="addCart()"><img src="/ecommerce-product-page-main/images/icon-cart.svg" alt="">Add to cart</button>
+       
+                </div>
+            </div>
+        </div>
+        <div id="empty-card">
+            <div class="head">
+                <h2>Cart</h2>
+            </div>
+            <p>Your cart is empty</p>
+        </div>
+        <div id="filled-card">
+            <div class="head">
+                <h2>Cart</h2>
+            </div>
+            <div class="cart-details">
+                <span class="smallimage"><img src="/ecommerce-product-page-main/images/image-product-1-thumbnail.jpg"  alt=""></span>
+                <span class='digit'>
+                    <div class="digit1"><p>Fall Limited Edition Sneakers</p></div>
+                   <div class="digit2">
+                    <span class="digit3"><p>$125 &times</p> <p class="number"></p> </span><span><p class="init">$</p><span>
+                   </div>
+                </span>
+                <span class="delete" onclick="deleteCart()"><img src="/ecommerce-product-page-main/images/icon-delete.svg" alt=""></span>
+                <button type="button" onclick="checkout()">checkout</button>
+            </div>
+        </div>
+
+        </div>
+        <div class="modal" id="myModal">
+            <span class="close cursor" onclick="closeModal()"><img src="/ecommerce-product-page-main/images/icon-close.svg" alt=""></span>
+            <div class="modal-content">
+                <div class="mySlides">
+                    <img src="/ecommerce-product-page-main/images/image-product-1.jpg" alt="">
+                </div>
+                <div class="mySlides">
+                    <img src="/ecommerce-product-page-main/images/image-product-2.jpg" alt="">
+                </div>
+                <div class="mySlides">
+                    <img src="/ecommerce-product-page-main/images/image-product-3.jpg" alt="">
+                </div>
+                <div class="mySlides">
+                    <img src="/ecommerce-product-page-main/images/image-product-4.jpg" alt="">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)"><img src="/ecommerce-product-page-main/images/icon-previous.svg" alt=""></a>
+                <a class="next" onclick="plusSlides(1)"><img src="/ecommerce-product-page-main/images/icon-next.svg" alt=""></a>
+
+
+               <span class="row" style="display:flex; margin-left:25px">
+                    <div class="column">
+                        <img src="/ecommerce-product-page-main/images/image-product-1-thumbnail.jpg" class="demo" style="width:60px;border-radius:5px;margin-left: 20px;" onclick="currentSlide(1)" alt="">
+                    </div>
+                    <div class="column">
+                        <img src="/ecommerce-product-page-main/images/image-product-2-thumbnail.jpg" class="demo" style="width:60px;border-radius:5px;margin-left: 20px;" onclick="currentSlide(2)" alt="">
+                    </div>
+                    <div class="column">
+                        <img src="/ecommerce-product-page-main/images/image-product-3-thumbnail.jpg" class="demo" style="width:60px;border-radius:5px;margin-left: 20px;" onclick="currentSlide(3)" alt="">
+                    </div>
+                    <div class="column">
+                        <img src="/ecommerce-product-page-main/images/image-product-4-thumbnail.jpg" class="demo" style="width:60px;border-radius:5px;margin-left: 20px;" onclick="currentSlide(4)" alt="">
+                    </div>
+                </span>
+            </div>
+        </div>
+</body>
+</html>
